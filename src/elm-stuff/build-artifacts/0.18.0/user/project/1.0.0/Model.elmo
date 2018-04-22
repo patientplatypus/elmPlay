@@ -1,0 +1,5 @@
+var _user$project$Model$model = {counter: 0, page: 1};
+var _user$project$Model$Model = F2(
+	function (a, b) {
+		return {counter: a, page: b};
+	});

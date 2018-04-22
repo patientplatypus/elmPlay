@@ -1,0 +1,10 @@
+var _user$project$Update$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{page: _p0._0});
+	});
+var _user$project$Update$ChangePage = function (a) {
+	return {ctor: 'ChangePage', _0: a};
+};

@@ -1,0 +1,10 @@
+var _user$project$Model$model = {
+	counter: 0,
+	page: 1,
+	dummy: 0,
+	item: {status: '', value: ''}
+};
+var _user$project$Model$Model = F4(
+	function (a, b, c, d) {
+		return {counter: a, page: b, dummy: c, item: d};
+	});

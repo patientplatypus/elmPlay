@@ -1,0 +1,69 @@
+var _user$project$Update$init = {
+	ctor: '_Tuple2',
+	_0: {
+		counter: 0,
+		page: 0,
+		dummy: 0,
+		item: {status: '', value: ''}
+	},
+	_1: _elm_lang$core$Platform_Cmd$none
+};
+var _user$project$Update$Item = F2(
+	function (a, b) {
+		return {status: a, value: b};
+	});
+var _user$project$Update$decodeItem = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'value',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'status',
+		_elm_lang$core$Json_Decode$string,
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Update$Item)));
+var _user$project$Update$WeatherResult = function (a) {
+	return {ctor: 'WeatherResult', _0: a};
+};
+var _user$project$Update$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'ChangePage':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{page: _p0._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'GetWeather':
+				var cmd = A2(
+					_elm_lang$http$Http$send,
+					_user$project$Update$WeatherResult,
+					A2(_elm_lang$http$Http$get, 'http://localhost:3000/fetchweather', _user$project$Update$decodeItem));
+				return {ctor: '_Tuple2', _0: model, _1: cmd};
+			default:
+				if (_p0._0.ctor === 'Ok') {
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{item: _p0._0._0}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					var _p1 = A2(_elm_lang$core$Debug$log, 'Http error', _p0._0._0);
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{item: model.item}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+		}
+	});
+var _user$project$Update$GetWeather = {ctor: 'GetWeather'};
+var _user$project$Update$ChangePage = function (a) {
+	return {ctor: 'ChangePage', _0: a};
+};
