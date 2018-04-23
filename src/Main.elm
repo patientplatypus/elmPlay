@@ -11,6 +11,8 @@ import Pages.Examples as Examples
 
 import Model exposing (..)
 import Update exposing (..)
+import WebSocket exposing (..)
+
 
 main =
   Html.program
@@ -19,13 +21,6 @@ main =
     , update = update
     , subscriptions = subscriptions
     }
-
-
--- SUBSCRIPTIONS
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
 
 
 -- VIEW

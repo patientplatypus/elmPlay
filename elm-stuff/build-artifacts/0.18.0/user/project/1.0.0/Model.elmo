@@ -2,9 +2,12 @@ var _user$project$Model$model = {
 	counter: 0,
 	page: 1,
 	dummy: 0,
-	item: {status: '', value: ''}
+	weatherCity: '',
+	item: {status: '', value: ''},
+	currentWeather: {status: ' ', place: ' ', temp: ' ', description: ' ', icon: ' ', humidity: ' ', precipitation: ' '},
+	socketMessage: ''
 };
-var _user$project$Model$Model = F4(
-	function (a, b, c, d) {
-		return {counter: a, page: b, dummy: c, item: d};
+var _user$project$Model$Model = F7(
+	function (a, b, c, d, e, f, g) {
+		return {counter: a, page: b, dummy: c, weatherCity: d, item: e, currentWeather: f, socketMessage: g};
 	});

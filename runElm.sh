@@ -3,7 +3,7 @@ echo In runElm
 echo here are the files in the directory
 ls
 echo now running elm-reactor
-elm-reactor --address=0.0.0.0 --port=8080
+elm-reactor --address=0.0.0.0 --port=8000
 
 
 # OTHER WAYS TO COMPILE BELOW

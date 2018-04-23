@@ -95,7 +95,6 @@ white, black, green, red, blue
   /* background-color: #55d6be; */
   padding: 1vh;
   border-radius: 25px;
-  padding: 1vh;
   margin-top: 2vh;
   margin-left: 4vw;
 }
@@ -108,7 +107,6 @@ white, black, green, red, blue
   /* background-color: #55d6be; */
   padding: 1vh;
   border-radius: 25px;
-  padding: 1vh;
   margin-top: 2vh;
   margin-left: 6vw;
 }
@@ -121,9 +119,17 @@ white, black, green, red, blue
   /* background-color: black; */
   padding: 1vh;
   border-radius: 25px;
-  padding: 1vh;
   margin-top: 2vh;
   margin-left: 8vw;
+}
+
+/*Here is where all the EXAMPLES stuff goes*/
+
+.IconPlacer{
+  font-size: 50px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
 }
 
 /* Here is where all the GRID stuff goes */
