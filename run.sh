@@ -1,16 +1,15 @@
 #!/bin/bash
-# echo In runElm
-# echo here are the files in the directory
-# ls
-# echo now running elm-reactor
-# elm-reactor --address=0.0.0.0 --port=8000
 
+# stop all containers
+echo stopping all containers
+docker stop $(docker ps -aq)
+# remove all containers
+echo removing all containers
+docker rm $(docker ps -aq)
+# remove all images
+echo removing all images
+docker rmi $(docker images -q)
 
-# OTHER WAYS TO COMPILE BELOW
-
-
-./spinUpReact.sh
-./spinUpElm.sh
-
-# this will live reload the html file, but it won't recompile the elm file
-# live-server --port=8000 --host=0.0.0.0
+echo now running docker-compose up
+docker-compose build --no-cache
+docker-compose up
