@@ -1,0 +1,172 @@
+var _user$project$Update$receiveResult = F2(
+	function (result, model) {
+		var _p0 = result;
+		if (_p0.ctor === 'Ok') {
+			var _p2 = _p0._0;
+			var _p1 = A2(_elm_lang$core$Debug$log, 'OK message', _p2);
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{socketMessage: model.socketMessage + 1, wiredStories: _p2}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		} else {
+			var _p3 = A2(_elm_lang$core$Debug$log, 'ERROR message', _p0._0);
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{socketMessage: -1}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		}
+	});
+var _user$project$Update$init = {
+	ctor: '_Tuple2',
+	_0: {
+		counter: 0,
+		page: 1,
+		dummy: 0,
+		weatherCity: '',
+		item: {status: '', value: ''},
+		currentWeather: {status: ' ', place: 'No location yet!', temp: 'No temperature yet!', description: 'No description yet!', icon: 'no image', humidity: 'No humidity yet!', precipitation: 'No precipiation yet!'},
+		socketMessage: 0,
+		wiredStories: {story1title: '', story1description: '', story1link: ''}
+	},
+	_1: _elm_lang$core$Platform_Cmd$none
+};
+var _user$project$Update$CurrentWeather = F7(
+	function (a, b, c, d, e, f, g) {
+		return {status: a, place: b, temp: c, description: d, icon: e, humidity: f, precipitation: g};
+	});
+var _user$project$Update$decodeCurrentWeather = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'precipitation',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'humidity',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'icon',
+			_elm_lang$core$Json_Decode$string,
+			A3(
+				_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+				'description',
+				_elm_lang$core$Json_Decode$string,
+				A3(
+					_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+					'temp',
+					_elm_lang$core$Json_Decode$string,
+					A3(
+						_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+						'place',
+						_elm_lang$core$Json_Decode$string,
+						A3(
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+							'status',
+							_elm_lang$core$Json_Decode$string,
+							_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Update$CurrentWeather))))))));
+var _user$project$Update$WiredStories = F3(
+	function (a, b, c) {
+		return {story1title: a, story1description: b, story1link: c};
+	});
+var _user$project$Update$decodeWiredStories = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'story1link',
+	_elm_lang$core$Json_Decode$string,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'story1description',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'story1title',
+			_elm_lang$core$Json_Decode$string,
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_user$project$Update$WiredStories))));
+var _user$project$Update$WeatherResult = function (a) {
+	return {ctor: 'WeatherResult', _0: a};
+};
+var _user$project$Update$update = F2(
+	function (msg, model) {
+		var _p4 = msg;
+		switch (_p4.ctor) {
+			case 'ChangePage':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{page: _p4._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'PickCity':
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{weatherCity: _p4._0}),
+					_1: _elm_lang$core$Platform_Cmd$none
+				};
+			case 'GetWeather':
+				var cmd = A2(
+					_elm_lang$http$Http$send,
+					_user$project$Update$WeatherResult,
+					A2(
+						_elm_lang$http$Http$get,
+						A2(_elm_lang$core$Basics_ops['++'], 'http://localhost:3000/fetchweather/', model.weatherCity),
+						_user$project$Update$decodeCurrentWeather));
+				return {ctor: '_Tuple2', _0: model, _1: cmd};
+			case 'WeatherResult':
+				if (_p4._0.ctor === 'Ok') {
+					var _p6 = _p4._0._0;
+					var _p5 = A2(_elm_lang$core$Debug$log, 'OK item', _p6);
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{currentWeather: _p6}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					var _p7 = A2(_elm_lang$core$Debug$log, 'Http error', _p4._0._0);
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{currentWeather: model.currentWeather}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'Send':
+				var _p8 = _elm_lang$core$Debug$log('inside send');
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: A2(_elm_lang$websocket$WebSocket$send, 'ws://localhost:8080/connection', 'message')
+				};
+			default:
+				var _p10 = _p4._0;
+				var result = A2(
+					_elm_lang$core$Json_Decode$decodeString,
+					A2(_elm_lang$core$Json_Decode$index, 0, _user$project$Update$decodeWiredStories),
+					_p10);
+				var _p9 = A2(_elm_lang$core$Debug$log, 'sock:', _p10);
+				return A2(_user$project$Update$receiveResult, result, model);
+		}
+	});
+var _user$project$Update$PickCity = function (a) {
+	return {ctor: 'PickCity', _0: a};
+};
+var _user$project$Update$GetWeather = {ctor: 'GetWeather'};
+var _user$project$Update$Receive = function (a) {
+	return {ctor: 'Receive', _0: a};
+};
+var _user$project$Update$subscriptions = function (model) {
+	return A2(_elm_lang$websocket$WebSocket$listen, 'ws://localhost:8080/connection', _user$project$Update$Receive);
+};
+var _user$project$Update$Send = {ctor: 'Send'};
+var _user$project$Update$ChangePage = function (a) {
+	return {ctor: 'ChangePage', _0: a};
+};

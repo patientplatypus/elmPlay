@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 const http = require('http');
 const url = require('url');
 const WebSocket = require('ws');
+var axios = require('axios');
+var parseString = require('xml2js').parseString;
 
 var cors = require('cors');
 
@@ -45,10 +47,38 @@ wss.on('connection', function connection(ws, req) {
  const location = url.parse(req.url, true);
  // You might use location.query.access_token to authenticate or share sessions
  // or req.headers.cookie (see http://stackoverflow.com/a/16395220/151312)
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+    function timeout() {
+        setTimeout(function () {
+          axios.get("https://www.wired.com/feed/rss")
+          .then(response=>{
+            // console.log('response from wired: ', response);
+            console.log('value of parsed xml from wired:');
+            var xml = response.data
 
- ws.on('message', function incoming(message) {
-   console.log('received: %s', message);
-   ws.send('something');
+            parseString(xml, function (err, result) {
+                console.log(result);
+                console.log(result.rss.channel);
+                var returnArr = [{
+                  "story1title": result.rss.channel[0].item[1].title[0].toString(),
+                  "story1description": result.rss.channel[0].item[1].description[0].toString(),
+                  "story1link": result.rss.channel[0].item[1].link[0].toString(),
+                }]
+                console.log('value of returnArr');
+                console.log(returnArr);
+                ws.send(JSON.stringify(returnArr));
+            });
+          })
+          .catch(error=>{
+            console.log('error from wired: ', error);
+          });
+          timeout();
+        }, 1000);
+    }
+
+    timeout();
+
  });
 });
 
