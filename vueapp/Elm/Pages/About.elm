@@ -60,7 +60,7 @@ page model =
                     ,ul [class "ulStyling"]
                     [ li [] [text "In the backend, the web socket scheduler was not included in a route but put in the main app. Many different socket libraries were used, but I was constrained in my choices as I was piping to Elm."]
                     , li [] [text "The main navigation was handled in Elm, but would be handled more eloquently in the top level if I were to start over. This decision was forced on me by deciding to do JS porting after I had architected my navigation and it was too late to change."]
-                    , li [] [text "I very much would have liked to make a Kubernetes deployment, but I was constrained by time considerations and lack of experience. I found that while deploying the backend and frontend to different pods on Kubernetes was trivial getting those pods to communicate without reverse proxies or unfamiliar libraries was not. Under other circumstances with more time it would be interesting to revisit - the azure-deploy yaml files are in the root of the project directory simply for future reference."]
+                    , li [] [text "I very much would have liked to make a Kubernetes deployment, but I was constrained by time considerations and lack of experience. I found that while deploying the backend and frontend to different pods on Kubernetes was trivial getting those pods to communicate without reverse proxies or unfamiliar libraries was not. Under other circumstances with more time it would be interesting to revisit - the azure-deploy yaml files are in the root of the project directory simply for future reference. Currently I simply deployed the two 'dev' builds to a docker VM without code to respin up crashed runtimes. Not as fun :<"]
                     , li [] [text "UI styling is functional but minimal. As part of learning the new syntax I did not have the time to go through the project and make it as pretty as I would have liked. I also would like to have a better understanding of how css files are handled as imports in Elm rather than being imported in the containing index.html file."]
                     ]
                   ]
@@ -122,20 +122,20 @@ page model =
                       , li [] [text "Global stylesheet included in index.html file."]
                       ]
                   ]
-                  -- In development !
-                  -- , div
-                  -- [class "PageSubHeading greenBack blackColor"]
-                  -- [
-                  --   p[][text "Deployment"]
-                  -- ]
-                  -- , div
-                  -- [class "PageText blackBack whiteColor"]
-                  -- [
-                  --     ul [class "ulStyling"]
-                  --     [ li [] [text "Dockerized front and back end, packaged together in docker-compose file."]
-                  --     , li [] [text "Deployed to Azure (availability of free credits), in VM. Necessity to send files to machine, ssh in and spin up. Also necessary to create Security Group to open ports and attach to subnet."]
-                  --     ]
-                  -- ]
+                  In development !
+                  , div
+                  [class "PageSubHeading greenBack blackColor"]
+                  [
+                    p[][text "Deployment"]
+                  ]
+                  , div
+                  [class "PageText blackBack whiteColor"]
+                  [
+                      ul [class "ulStyling"]
+                      [ li [] [text "Dockerized front and back end, packaged together in docker-compose file."]
+                      , li [] [text "Deployed to Azure (availability of free credits), in VM. Necessity to send files to machine, ssh in and spin up. Also necessary to create Security Group to open ports and attach to subnet."]
+                      ]
+                  ]
                 ]
             ]
         ]

@@ -4,7 +4,7 @@
 
 Simply `chmod 777 run.sh && ./run.sh`
 
-<!--
+
 
 In development !
 
@@ -12,4 +12,4 @@ In development !
 
 http://averypatientplatypus.eastus.cloudapp.azure.com:5000/#/
 
-- live deployment may be fragile, default to run locally  -->
+- live deployment may be fragile, default to run locally
