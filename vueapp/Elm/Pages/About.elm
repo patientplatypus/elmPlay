@@ -122,19 +122,20 @@ page model =
                       , li [] [text "Global stylesheet included in index.html file."]
                       ]
                   ]
-                  , div
-                  [class "PageSubHeading greenBack blackColor"]
-                  [
-                    p[][text "Deployment"]
-                  ]
-                  , div
-                  [class "PageText blackBack whiteColor"]
-                  [
-                      ul [class "ulStyling"]
-                      [ li [] [text "Dockerized front and back end, packaged together in docker-compose file."]
-                      , li [] [text "Deployed to Azure (availability of free credits), in VM. Necessity to send files to machine, ssh in and spin up. Also necessary to create Security Group to open ports and attach to subnet."]
-                      ]
-                  ]
+                  -- In development !
+                  -- , div
+                  -- [class "PageSubHeading greenBack blackColor"]
+                  -- [
+                  --   p[][text "Deployment"]
+                  -- ]
+                  -- , div
+                  -- [class "PageText blackBack whiteColor"]
+                  -- [
+                  --     ul [class "ulStyling"]
+                  --     [ li [] [text "Dockerized front and back end, packaged together in docker-compose file."]
+                  --     , li [] [text "Deployed to Azure (availability of free credits), in VM. Necessity to send files to machine, ssh in and spin up. Also necessary to create Security Group to open ports and attach to subnet."]
+                  --     ]
+                  -- ]
                 ]
             ]
         ]
