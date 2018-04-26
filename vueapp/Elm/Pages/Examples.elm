@@ -301,6 +301,7 @@ socketHandler model =
         ,p[][ text model.wiredStories.story1title]
         ,p[][ text model.wiredStories.story1description]
         ,p[][ text model.wiredStories.story1link]
+        ,button [onClick Send] [text "Send message to server!"]
         ,p[][ text ("Number of times backend updated: "++(toString model.socketMessage))]
       ]
 

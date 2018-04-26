@@ -49,18 +49,11 @@ var returnArr = [{
   "story1link": "cron job not yet activated",
 }];
 
-
 wss.on('connection', function connection(ws, req) {
  const location = url.parse(req.url, true);
   ws.on('message', function incoming(message) {
     console.log('received: %s', message);
-    function timeout() {
-        setTimeout(function () {
-            ws.send(JSON.stringify(returnArr));
-          timeout();
-        }, 1000);
-    }
-    timeout();
+    ws.send(JSON.stringify(returnArr));
  });
 });
 
