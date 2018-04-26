@@ -4,6 +4,8 @@
 
 Simply `chmod 777 run.sh && ./run.sh`
 
-## Can be seen LIVE
+## Can be seen live
 
 http://averypatientplatypus.eastus.cloudapp.azure.com:5000/#/
+
+- live deployment may be fragile, default to run locally 
