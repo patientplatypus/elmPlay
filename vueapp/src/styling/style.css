@@ -150,6 +150,10 @@ white, black, green, red, blue
   margin-left: 8vw;
 }
 
+.ulStyling{
+  line-height:130%;
+}
+
 /*Here is where all the EXAMPLES stuff goes*/
 
 .IconPlacer{

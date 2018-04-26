@@ -113,7 +113,20 @@ var _user$project$Pages_About$page = function (model) {
 														{
 															ctor: '::',
 															_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
-															_1: {ctor: '[]'}
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$style(
+																	{
+																		ctor: '::',
+																		_0: {ctor: '_Tuple2', _0: 'line-height', _1: '150%'},
+																		_1: {
+																			ctor: '::',
+																			_0: {ctor: '_Tuple2', _0: 'font-size', _1: '20px'},
+																			_1: {ctor: '[]'}
+																		}
+																	}),
+																_1: {ctor: '[]'}
+															}
 														},
 														{
 															ctor: '::',
@@ -122,7 +135,7 @@ var _user$project$Pages_About$page = function (model) {
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+																	_0: _elm_lang$html$Html$text('In an approximately one week period I have attempted to learn as much as I could about the Elm framework - to the extent that I could make a working app based on examples in the documentation and perhaps go a little bit farther. The purpose of this app is not to be *astounding* or a place to stop, but a beginning.'),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {ctor: '[]'}
@@ -155,7 +168,7 @@ var _user$project$Pages_About$page = function (model) {
 																{ctor: '[]'},
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Features'),
+																	_0: _elm_lang$html$Html$text('Post Mortem'),
 																	_1: {ctor: '[]'}
 																}),
 															_1: {ctor: '[]'}
@@ -166,7 +179,104 @@ var _user$project$Pages_About$page = function (model) {
 															_elm_lang$html$Html$div,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$style(
+																		{
+																			ctor: '::',
+																			_0: {ctor: '_Tuple2', _0: 'line-height', _1: '150%'},
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}
+															},
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$p,
+																	{ctor: '[]'},
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html$text('Having completed the project there were a few take aways on things that could be or could have been improved that I think it is important to note for the future. Many, but not all, of these issues were due to the time constraints preventing them from being MVP.'),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$ul,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('ulStyling'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$li,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('In the backend, the web socket scheduler was not included in a route but put in the main app. Many different socket libraries were used, but I was constrained in my choices as I was piping to Elm.'),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$li,
+																					{ctor: '[]'},
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html$text('The main navigation was handled in Elm, but would be handled more eloquently in the top level if I were to start over. This decision was forced on me by deciding to do JS porting after I had architected my navigation and it was too late to change.'),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$li,
+																						{ctor: '[]'},
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html$text('I very much would have liked to make a Kubernetes deployment, but I was constrained by time considerations and lack of experience. I found that while deploying the backend and frontend to different pods on Kubernetes was trivial getting those pods to communicate without reverse proxies or unfamiliar libraries was not. Under other circumstances with more time it would be interesting to revisit - the azure-deploy yaml files are in the root of the project directory simply for future reference.'),
+																							_1: {ctor: '[]'}
+																						}),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$li,
+																							{ctor: '[]'},
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html$text('UI styling is functional but minimal. As part of learning the new syntax I did not have the time to go through the project and make it as pretty as I would have liked. I also would like to have a better understanding of how css files are handled as imports in Elm rather than being imported in the containing index.html file.'),
+																								_1: {ctor: '[]'}
+																							}),
+																						_1: {ctor: '[]'}
+																					}
+																				}
+																			}
+																		}),
+																	_1: {ctor: '[]'}
+																}
+															}),
+														_1: {ctor: '[]'}
+													}
+												}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('Flex1'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('PageHeading greenBack blackColor'),
 																_1: {ctor: '[]'}
 															},
 															{
@@ -176,7 +286,7 @@ var _user$project$Pages_About$page = function (model) {
 																	{ctor: '[]'},
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Elm'),
+																		_0: _elm_lang$html$Html$text('Features'),
 																		_1: {ctor: '[]'}
 																	}),
 																_1: {ctor: '[]'}
@@ -187,106 +297,18 @@ var _user$project$Pages_About$page = function (model) {
 																_elm_lang$html$Html$div,
 																{
 																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
+																	_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
 																	_1: {ctor: '[]'}
 																},
 																{
 																	ctor: '::',
 																	_0: A2(
-																		_elm_lang$html$Html$ul,
+																		_elm_lang$html$Html$p,
+																		{ctor: '[]'},
 																		{
 																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class(''),
+																			_0: _elm_lang$html$Html$text('Elm & Vue'),
 																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$li,
-																				{ctor: '[]'},
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html$text('Pamplemousse'),
-																					_1: {ctor: '[]'}
-																				}),
-																			_1: {
-																				ctor: '::',
-																				_0: A2(
-																					_elm_lang$html$Html$li,
-																					{ctor: '[]'},
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html$text('Ananas'),
-																						_1: {ctor: '[]'}
-																					}),
-																				_1: {
-																					ctor: '::',
-																					_0: A2(
-																						_elm_lang$html$Html$li,
-																						{ctor: '[]'},
-																						{
-																							ctor: '::',
-																							_0: _elm_lang$html$Html$text('Jus d\'orange'),
-																							_1: {ctor: '[]'}
-																						}),
-																					_1: {
-																						ctor: '::',
-																						_0: A2(
-																							_elm_lang$html$Html$li,
-																							{ctor: '[]'},
-																							{
-																								ctor: '::',
-																								_0: _elm_lang$html$Html$text('Boeuf'),
-																								_1: {ctor: '[]'}
-																							}),
-																						_1: {
-																							ctor: '::',
-																							_0: A2(
-																								_elm_lang$html$Html$li,
-																								{ctor: '[]'},
-																								{
-																									ctor: '::',
-																									_0: _elm_lang$html$Html$text('Soupe du jour'),
-																									_1: {ctor: '[]'}
-																								}),
-																							_1: {
-																								ctor: '::',
-																								_0: A2(
-																									_elm_lang$html$Html$li,
-																									{ctor: '[]'},
-																									{
-																										ctor: '::',
-																										_0: _elm_lang$html$Html$text('Camembert'),
-																										_1: {ctor: '[]'}
-																									}),
-																								_1: {
-																									ctor: '::',
-																									_0: A2(
-																										_elm_lang$html$Html$li,
-																										{ctor: '[]'},
-																										{
-																											ctor: '::',
-																											_0: _elm_lang$html$Html$text('Jacques Cousteau'),
-																											_1: {ctor: '[]'}
-																										}),
-																									_1: {
-																										ctor: '::',
-																										_0: A2(
-																											_elm_lang$html$Html$li,
-																											{ctor: '[]'},
-																											{
-																												ctor: '::',
-																												_0: _elm_lang$html$Html$text('Baguette'),
-																												_1: {ctor: '[]'}
-																											}),
-																										_1: {ctor: '[]'}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
 																		}),
 																	_1: {ctor: '[]'}
 																}),
@@ -296,47 +318,36 @@ var _user$project$Pages_About$page = function (model) {
 																	_elm_lang$html$Html$div,
 																	{
 																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																		_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
 																		_1: {ctor: '[]'}
 																	},
 																	{
 																		ctor: '::',
 																		_0: A2(
-																			_elm_lang$html$Html$p,
-																			{ctor: '[]'},
+																			_elm_lang$html$Html$ul,
 																			{
 																				ctor: '::',
-																				_0: _elm_lang$html$Html$text('CSS'),
+																				_0: _elm_lang$html$Html_Attributes$class('ulStyling'),
 																				_1: {ctor: '[]'}
-																			}),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$ul,
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class(''),
-																					_1: {ctor: '[]'}
-																				},
-																				{
+																			},
+																			{
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$li,
+																					{ctor: '[]'},
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html$text('Well architected starter project with Elm components in separate files. Specifically individual pages have their own files in a pages directory, while Main, Model, and Update are broken up into files. Model is top level with Main and Update acting as children (no looping references).'),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {
 																					ctor: '::',
 																					_0: A2(
 																						_elm_lang$html$Html$li,
 																						{ctor: '[]'},
 																						{
 																							ctor: '::',
-																							_0: _elm_lang$html$Html$text('Pamplemousse'),
+																							_0: _elm_lang$html$Html$text('Learned the syntax for Elm \'jsx\'.'),
 																							_1: {ctor: '[]'}
 																						}),
 																					_1: {
@@ -346,7 +357,7 @@ var _user$project$Pages_About$page = function (model) {
 																							{ctor: '[]'},
 																							{
 																								ctor: '::',
-																								_0: _elm_lang$html$Html$text('Ananas'),
+																								_0: _elm_lang$html$Html$text('Page handling done through a pageHandler function in the Main file. While not a complete SPA (single page application), it can appear to be as one.'),
 																								_1: {ctor: '[]'}
 																							}),
 																						_1: {
@@ -356,7 +367,7 @@ var _user$project$Pages_About$page = function (model) {
 																								{ctor: '[]'},
 																								{
 																									ctor: '::',
-																									_0: _elm_lang$html$Html$text('Jus d\'orange'),
+																									_0: _elm_lang$html$Html$text('An example calling the backend for a get request and updating the UI with the values.'),
 																									_1: {ctor: '[]'}
 																								}),
 																							_1: {
@@ -366,7 +377,7 @@ var _user$project$Pages_About$page = function (model) {
 																									{ctor: '[]'},
 																									{
 																										ctor: '::',
-																										_0: _elm_lang$html$Html$text('Boeuf'),
+																										_0: _elm_lang$html$Html$text('Similarly a socket based request is opened to the backend using the subscriptions method to get real time streaming of events.'),
 																										_1: {ctor: '[]'}
 																									}),
 																								_1: {
@@ -376,7 +387,7 @@ var _user$project$Pages_About$page = function (model) {
 																										{ctor: '[]'},
 																										{
 																											ctor: '::',
-																											_0: _elm_lang$html$Html$text('Soupe du jour'),
+																											_0: _elm_lang$html$Html$text('Finally, ports are opened to a Vue app which the Elm application is embedded into. Subscriptions are used to call a function and return from there.'),
 																											_1: {ctor: '[]'}
 																										}),
 																									_1: {
@@ -386,7 +397,7 @@ var _user$project$Pages_About$page = function (model) {
 																											{ctor: '[]'},
 																											{
 																												ctor: '::',
-																												_0: _elm_lang$html$Html$text('Camembert'),
+																												_0: _elm_lang$html$Html$text('Usage of functions throughout and understanding of typing.'),
 																												_1: {ctor: '[]'}
 																											}),
 																										_1: {
@@ -396,27 +407,38 @@ var _user$project$Pages_About$page = function (model) {
 																												{ctor: '[]'},
 																												{
 																													ctor: '::',
-																													_0: _elm_lang$html$Html$text('Jacques Cousteau'),
+																													_0: _elm_lang$html$Html$text('Json Decoding using NoRedInk Pipeline method'),
 																													_1: {ctor: '[]'}
 																												}),
-																											_1: {
-																												ctor: '::',
-																												_0: A2(
-																													_elm_lang$html$Html$li,
-																													{ctor: '[]'},
-																													{
-																														ctor: '::',
-																														_0: _elm_lang$html$Html$text('Baguette'),
-																														_1: {ctor: '[]'}
-																													}),
-																												_1: {ctor: '[]'}
-																											}
+																											_1: {ctor: '[]'}
 																										}
 																									}
 																								}
 																							}
 																						}
 																					}
+																				}
+																			}),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$div,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$p,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('Backend'),
+																					_1: {ctor: '[]'}
 																				}),
 																			_1: {ctor: '[]'}
 																		}),
@@ -426,47 +448,36 @@ var _user$project$Pages_About$page = function (model) {
 																			_elm_lang$html$Html$div,
 																			{
 																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																				_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
 																				_1: {ctor: '[]'}
 																			},
 																			{
 																				ctor: '::',
 																				_0: A2(
-																					_elm_lang$html$Html$p,
-																					{ctor: '[]'},
+																					_elm_lang$html$Html$ul,
 																					{
 																						ctor: '::',
-																						_0: _elm_lang$html$Html$text('Deployment'),
+																						_0: _elm_lang$html$Html_Attributes$class(''),
 																						_1: {ctor: '[]'}
-																					}),
-																				_1: {ctor: '[]'}
-																			}),
-																		_1: {
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$div,
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
-																					_1: {ctor: '[]'}
-																				},
-																				{
-																					ctor: '::',
-																					_0: A2(
-																						_elm_lang$html$Html$ul,
-																						{
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$class(''),
-																							_1: {ctor: '[]'}
-																						},
-																						{
+																					},
+																					{
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$li,
+																							{ctor: '[]'},
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html$text('Scaffolded express app.'),
+																								_1: {ctor: '[]'}
+																							}),
+																						_1: {
 																							ctor: '::',
 																							_0: A2(
 																								_elm_lang$html$Html$li,
 																								{ctor: '[]'},
 																								{
 																									ctor: '::',
-																									_0: _elm_lang$html$Html$text('Pamplemousse'),
+																									_0: _elm_lang$html$Html$text('Routing for get request for weather call, calling third party api to get the current weather of an inputted city.'),
 																									_1: {ctor: '[]'}
 																								}),
 																							_1: {
@@ -476,7 +487,7 @@ var _user$project$Pages_About$page = function (model) {
 																									{ctor: '[]'},
 																									{
 																										ctor: '::',
-																										_0: _elm_lang$html$Html$text('Ananas'),
+																										_0: _elm_lang$html$Html$text('Web sockets implementation using the ws package.'),
 																										_1: {ctor: '[]'}
 																									}),
 																								_1: {
@@ -486,7 +497,7 @@ var _user$project$Pages_About$page = function (model) {
 																										{ctor: '[]'},
 																										{
 																											ctor: '::',
-																											_0: _elm_lang$html$Html$text('Jus d\'orange'),
+																											_0: _elm_lang$html$Html$text('cron scheduler app that listens to update a story that is retrieved from the Wired news feed.'),
 																											_1: {ctor: '[]'}
 																										}),
 																									_1: {
@@ -496,57 +507,35 @@ var _user$project$Pages_About$page = function (model) {
 																											{ctor: '[]'},
 																											{
 																												ctor: '::',
-																												_0: _elm_lang$html$Html$text('Boeuf'),
+																												_0: _elm_lang$html$Html$text('XML parser converts to JSON.'),
 																												_1: {ctor: '[]'}
 																											}),
-																										_1: {
-																											ctor: '::',
-																											_0: A2(
-																												_elm_lang$html$Html$li,
-																												{ctor: '[]'},
-																												{
-																													ctor: '::',
-																													_0: _elm_lang$html$Html$text('Soupe du jour'),
-																													_1: {ctor: '[]'}
-																												}),
-																											_1: {
-																												ctor: '::',
-																												_0: A2(
-																													_elm_lang$html$Html$li,
-																													{ctor: '[]'},
-																													{
-																														ctor: '::',
-																														_0: _elm_lang$html$Html$text('Camembert'),
-																														_1: {ctor: '[]'}
-																													}),
-																												_1: {
-																													ctor: '::',
-																													_0: A2(
-																														_elm_lang$html$Html$li,
-																														{ctor: '[]'},
-																														{
-																															ctor: '::',
-																															_0: _elm_lang$html$Html$text('Jacques Cousteau'),
-																															_1: {ctor: '[]'}
-																														}),
-																													_1: {
-																														ctor: '::',
-																														_0: A2(
-																															_elm_lang$html$Html$li,
-																															{ctor: '[]'},
-																															{
-																																ctor: '::',
-																																_0: _elm_lang$html$Html$text('Baguette'),
-																																_1: {ctor: '[]'}
-																															}),
-																														_1: {ctor: '[]'}
-																													}
-																												}
-																											}
-																										}
+																										_1: {ctor: '[]'}
 																									}
 																								}
 																							}
+																						}
+																					}),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$div,
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																					_1: {ctor: '[]'}
+																				},
+																				{
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$p,
+																						{ctor: '[]'},
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html$text('CSS'),
+																							_1: {ctor: '[]'}
 																						}),
 																					_1: {ctor: '[]'}
 																				}),
@@ -556,47 +545,36 @@ var _user$project$Pages_About$page = function (model) {
 																					_elm_lang$html$Html$div,
 																					{
 																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																						_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
 																						_1: {ctor: '[]'}
 																					},
 																					{
 																						ctor: '::',
 																						_0: A2(
-																							_elm_lang$html$Html$p,
-																							{ctor: '[]'},
+																							_elm_lang$html$Html$ul,
 																							{
 																								ctor: '::',
-																								_0: _elm_lang$html$Html$text('Cloud'),
+																								_0: _elm_lang$html$Html_Attributes$class('ulStyling'),
 																								_1: {ctor: '[]'}
-																							}),
-																						_1: {ctor: '[]'}
-																					}),
-																				_1: {
-																					ctor: '::',
-																					_0: A2(
-																						_elm_lang$html$Html$div,
-																						{
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
-																							_1: {ctor: '[]'}
-																						},
-																						{
-																							ctor: '::',
-																							_0: A2(
-																								_elm_lang$html$Html$ul,
-																								{
-																									ctor: '::',
-																									_0: _elm_lang$html$Html_Attributes$class(''),
-																									_1: {ctor: '[]'}
-																								},
-																								{
+																							},
+																							{
+																								ctor: '::',
+																								_0: A2(
+																									_elm_lang$html$Html$li,
+																									{ctor: '[]'},
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html$text('CSS grid is used for the main \'gross\' styling of the app including the location of the header and body of the Elm SPA.'),
+																										_1: {ctor: '[]'}
+																									}),
+																								_1: {
 																									ctor: '::',
 																									_0: A2(
 																										_elm_lang$html$Html$li,
 																										{ctor: '[]'},
 																										{
 																											ctor: '::',
-																											_0: _elm_lang$html$Html$text('Pamplemousse'),
+																											_0: _elm_lang$html$Html$text('Use of Flexbox column and row throughout for minor adjustments.'),
 																											_1: {ctor: '[]'}
 																										}),
 																									_1: {
@@ -606,7 +584,62 @@ var _user$project$Pages_About$page = function (model) {
 																											{ctor: '[]'},
 																											{
 																												ctor: '::',
-																												_0: _elm_lang$html$Html$text('Ananas'),
+																												_0: _elm_lang$html$Html$text('Global stylesheet included in index.html file.'),
+																												_1: {ctor: '[]'}
+																											}),
+																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}),
+																						_1: {ctor: '[]'}
+																					}),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(
+																						_elm_lang$html$Html$div,
+																						{
+																							ctor: '::',
+																							_0: _elm_lang$html$Html_Attributes$class('PageSubHeading greenBack blackColor'),
+																							_1: {ctor: '[]'}
+																						},
+																						{
+																							ctor: '::',
+																							_0: A2(
+																								_elm_lang$html$Html$p,
+																								{ctor: '[]'},
+																								{
+																									ctor: '::',
+																									_0: _elm_lang$html$Html$text('Deployment'),
+																									_1: {ctor: '[]'}
+																								}),
+																							_1: {ctor: '[]'}
+																						}),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(
+																							_elm_lang$html$Html$div,
+																							{
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Attributes$class('PageText blackBack whiteColor'),
+																								_1: {ctor: '[]'}
+																							},
+																							{
+																								ctor: '::',
+																								_0: A2(
+																									_elm_lang$html$Html$ul,
+																									{
+																										ctor: '::',
+																										_0: _elm_lang$html$Html_Attributes$class('ulStyling'),
+																										_1: {ctor: '[]'}
+																									},
+																									{
+																										ctor: '::',
+																										_0: A2(
+																											_elm_lang$html$Html$li,
+																											{ctor: '[]'},
+																											{
+																												ctor: '::',
+																												_0: _elm_lang$html$Html$text('Dockerized front and back end, packaged together in docker-compose file.'),
 																												_1: {ctor: '[]'}
 																											}),
 																										_1: {
@@ -616,71 +649,16 @@ var _user$project$Pages_About$page = function (model) {
 																												{ctor: '[]'},
 																												{
 																													ctor: '::',
-																													_0: _elm_lang$html$Html$text('Jus d\'orange'),
+																													_0: _elm_lang$html$Html$text('Deployed to Azure (availability of free credits), in VM. Necessity to send files to machine, ssh in and spin up. Also necessary to create Security Group to open ports and attach to subnet.'),
 																													_1: {ctor: '[]'}
 																												}),
-																											_1: {
-																												ctor: '::',
-																												_0: A2(
-																													_elm_lang$html$Html$li,
-																													{ctor: '[]'},
-																													{
-																														ctor: '::',
-																														_0: _elm_lang$html$Html$text('Boeuf'),
-																														_1: {ctor: '[]'}
-																													}),
-																												_1: {
-																													ctor: '::',
-																													_0: A2(
-																														_elm_lang$html$Html$li,
-																														{ctor: '[]'},
-																														{
-																															ctor: '::',
-																															_0: _elm_lang$html$Html$text('Soupe du jour'),
-																															_1: {ctor: '[]'}
-																														}),
-																													_1: {
-																														ctor: '::',
-																														_0: A2(
-																															_elm_lang$html$Html$li,
-																															{ctor: '[]'},
-																															{
-																																ctor: '::',
-																																_0: _elm_lang$html$Html$text('Camembert'),
-																																_1: {ctor: '[]'}
-																															}),
-																														_1: {
-																															ctor: '::',
-																															_0: A2(
-																																_elm_lang$html$Html$li,
-																																{ctor: '[]'},
-																																{
-																																	ctor: '::',
-																																	_0: _elm_lang$html$Html$text('Jacques Cousteau'),
-																																	_1: {ctor: '[]'}
-																																}),
-																															_1: {
-																																ctor: '::',
-																																_0: A2(
-																																	_elm_lang$html$Html$li,
-																																	{ctor: '[]'},
-																																	{
-																																		ctor: '::',
-																																		_0: _elm_lang$html$Html$text('Baguette'),
-																																		_1: {ctor: '[]'}
-																																	}),
-																																_1: {ctor: '[]'}
-																															}
-																														}
-																													}
-																												}
-																											}
+																											_1: {ctor: '[]'}
 																										}
-																									}
-																								}),
-																							_1: {ctor: '[]'}
-																						}),
-																					_1: {ctor: '[]'}
+																									}),
+																								_1: {ctor: '[]'}
+																							}),
+																						_1: {ctor: '[]'}
+																					}
 																				}
 																			}
 																		}
@@ -688,9 +666,9 @@ var _user$project$Pages_About$page = function (model) {
 																}
 															}
 														}
-													}
-												}),
-											_1: {ctor: '[]'}
+													}),
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}

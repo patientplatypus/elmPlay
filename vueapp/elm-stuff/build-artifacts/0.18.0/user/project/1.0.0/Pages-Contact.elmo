@@ -59,7 +59,7 @@ var _user$project$Pages_Contact$page = function (model) {
 												_elm_lang$html$Html$div,
 												{
 													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class('PageTitle'),
+													_0: _elm_lang$html$Html_Attributes$class('PageTitle blueBack blackColor'),
 													_1: {ctor: '[]'}
 												},
 												{
@@ -91,28 +91,206 @@ var _user$project$Pages_Contact$page = function (model) {
 													_elm_lang$html$Html$div,
 													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('PageContent'),
-														_1: {ctor: '[]'}
+														_0: _elm_lang$html$Html_Attributes$class('FlexRow blueBack blackColor'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$style(
+																{
+																	ctor: '::',
+																	_0: {ctor: '_Tuple2', _0: 'width', _1: '80%'},
+																	_1: {
+																		ctor: '::',
+																		_0: {ctor: '_Tuple2', _0: 'margin-left', _1: '7%'},
+																		_1: {
+																			ctor: '::',
+																			_0: {ctor: '_Tuple2', _0: 'margin-top', _1: '2vh'},
+																			_1: {
+																				ctor: '::',
+																				_0: {ctor: '_Tuple2', _0: 'borderRadius', _1: '25px'},
+																				_1: {
+																					ctor: '::',
+																					_0: {ctor: '_Tuple2', _0: 'font-size', _1: '25px'},
+																					_1: {ctor: '[]'}
+																				}
+																			}
+																		}
+																	}
+																}),
+															_1: {ctor: '[]'}
+														}
 													},
 													{
 														ctor: '::',
 														_0: A2(
 															_elm_lang$html$Html$p,
-															{ctor: '[]'},
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html$text('Page Content Goes Here'),
+																_0: _elm_lang$html$Html_Attributes$style(
+																	{
+																		ctor: '::',
+																		_0: {ctor: '_Tuple2', _0: 'paddingLeft', _1: '10vw'},
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('Feel free to contact me by:'),
 																_1: {ctor: '[]'}
 															}),
-														_1: {ctor: '[]'}
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$ul,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('ulStyling'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$style(
+																			{
+																				ctor: '::',
+																				_0: {ctor: '_Tuple2', _0: 'paddingLeft', _1: '10vw'},
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {ctor: '[]'}
+																	}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$li,
+																		{ctor: '[]'},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('phone: 828 273 5594'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$li,
+																			{ctor: '[]'},
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html$text('email: pweyand@gmail.com'),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(
+																				_elm_lang$html$Html$li,
+																				{ctor: '[]'},
+																				{
+																					ctor: '::',
+																					_0: _elm_lang$html$Html$text('linkedin: linkedin.com/peterweyand'),
+																					_1: {ctor: '[]'}
+																				}),
+																			_1: {ctor: '[]'}
+																		}
+																	}
+																}),
+															_1: {ctor: '[]'}
+														}
 													}),
 												_1: {ctor: '[]'}
 											}),
-										_1: {ctor: '[]'}
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$html$Html$div,
+												{
+													ctor: '::',
+													_0: _elm_lang$html$Html_Attributes$class('Flex1'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$style(
+															{
+																ctor: '::',
+																_0: {ctor: '_Tuple2', _0: 'width', _1: '80%'},
+																_1: {
+																	ctor: '::',
+																	_0: {ctor: '_Tuple2', _0: 'marginLeft', _1: '10%'},
+																	_1: {
+																		ctor: '::',
+																		_0: {ctor: '_Tuple2', _0: 'marginTop', _1: '4vh'},
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}),
+														_1: {ctor: '[]'}
+													}
+												},
+												{
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$img,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$src('http://funkyimg.com/i/2Fq4J.jpg'),
+															_1: {ctor: '[]'}
+														},
+														{ctor: '[]'}),
+													_1: {ctor: '[]'}
+												}),
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}),
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$style(
+										{
+											ctor: '::',
+											_0: {ctor: '_Tuple2', _0: 'position', _1: 'absolute'},
+											_1: {
+												ctor: '::',
+												_0: {ctor: '_Tuple2', _0: 'top', _1: '15vh'},
+												_1: {
+													ctor: '::',
+													_0: {ctor: '_Tuple2', _0: 'right', _1: '2.5vw'},
+													_1: {
+														ctor: '::',
+														_0: {ctor: '_Tuple2', _0: 'width', _1: '15vw'},
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$img,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$src('http://funkyimg.com/i/2Fq5o.jpg'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$style(
+													{
+														ctor: '::',
+														_0: {ctor: '_Tuple2', _0: 'maxHeight', _1: '100%'},
+														_1: {
+															ctor: '::',
+															_0: {ctor: '_Tuple2', _0: 'maxWidth', _1: '100%'},
+															_1: {ctor: '[]'}
+														}
+													}),
+												_1: {ctor: '[]'}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
 					}),
 				_1: {ctor: '[]'}
 			}

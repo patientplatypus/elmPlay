@@ -1,0 +1,73 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: elmtreevueapp
+  labels:
+    app: elmtreevueapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elmtreevueapp
+  template:
+    metadata:
+      labels:
+        app: elmtreevueapp
+    spec:
+      containers:
+      - name: elmtreevueapp
+        image: patientplatypusnest.azurecr.io/elmtree_vueapp:v2
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elmtreevueapp
+  labels:
+    app: elmtreevueapp
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+  selector:
+    app: elmtreevueapp
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: elmtreebackend
+  labels:
+    app: elmtreebackend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elmtreebackend
+  template:
+    metadata:
+      labels:
+        app: elmtreebackend
+    spec:
+      containers:
+      - name: elmtreebackend
+        image: patientplatypusnest.azurecr.io/elmtree_backend:v2
+        ports:
+        - containerPort: 8080
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elmtreebackend
+  labels:
+    app: elmtreebackend
+spec:
+  ports:
+  type: LoadBalancer
+  - name: socket
+    port: 8080
+  - name: request
+    port: 3000
+  selector:
+    app: elmtreebackend

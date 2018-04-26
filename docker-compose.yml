@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   backend:
@@ -14,3 +14,7 @@ services:
      - "5000:5000"
     volumes:
      - .:/vueapp
+
+
+# patientplatypusnest.azurecr.io/elmtree_vueapp
+# patientplatypusnest.azurecr.io/elmtree_backend
